@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar - MIBER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="MIBER, beranda">MIBER<span>.</span></a>
+    <a class="back-link" href="index.html">← Kembali ke beranda</a>
+  </header>
+
+  <main class="login-main">
+    <section class="login-card" aria-labelledby="register-title">
+      <p class="eyebrow">BUAT AKUN BARU</p>
+      <h1 id="register-title">Daftar ke MIBER</h1>
+      <p class="login-intro">Buat akun untuk mulai belanja lap microfiber pilihanmu.</p>
+      <form id="register-form" action="#" method="get" novalidate>
+        <label for="reg-name">Nama</label>
+        <input id="reg-name" name="name" type="text" placeholder="Nama lengkap" autocomplete="name" required aria-describedby="reg-name-error">
+        <p class="error" id="reg-name-error" aria-live="polite"></p>
+
+        <label for="reg-email">Email</label>
+        <input id="reg-email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required aria-describedby="reg-email-error">
+        <p class="error" id="reg-email-error" aria-live="polite"></p>
+
+        <label for="reg-password">Kata sandi</label>
+        <div class="password-wrap">
+          <input id="reg-password" name="password" type="password" placeholder="Minimal 6 karakter" autocomplete="new-password" required aria-describedby="reg-password-error">
+          <button type="button" class="show-btn" id="toggle-reg-password" aria-label="Tampilkan kata sandi" aria-pressed="false">
+            <svg class="icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <p class="error" id="reg-password-error" aria-live="polite"></p>
+
+        <label for="reg-confirm">Konfirmasi kata sandi</label>
+        <div class="password-wrap">
+          <input id="reg-confirm" name="confirm" type="password" placeholder="Ulangi kata sandi" autocomplete="new-password" required aria-describedby="reg-confirm-error">
+          <button type="button" class="show-btn" id="toggle-reg-confirm" aria-label="Tampilkan kata sandi" aria-pressed="false">
+            <svg class="icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <p class="error" id="reg-confirm-error" aria-live="polite"></p>
+
+        <button class="button login-button" type="submit">Daftar</button>
+        <p class="success" id="register-success" aria-live="polite" hidden></p>
+      </form>
+      <p class="signup-note">Sudah punya akun? <a href="login.html">Masuk di sini</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer login-footer">
+    <a class="logo" href="index.html">MIBER<span>.</span></a>
+    <p>Lap microfiber untuk keseharian.</p>
+  </footer>
+  <button id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="script.js" defer></script>
+</body>
+</html>

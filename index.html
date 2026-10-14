@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MIBER, lap microfiber serbaguna yang lembut, menyerap, dan dapat dipakai ulang.">
+  <title>MIBER Lap Microfiber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="MIBER, beranda">MIBER<span>.</span></a>
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka menu navigasi">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav" aria-label="Navigasi utama">
+      <a href="#produk">Produk</a>
+      <a href="#manfaat">Manfaat</a>
+      <a href="#pesan">Pesan <span class="cart-count" id="cart-count" aria-label="Jumlah item di keranjang">0</span></a>
+      <a class="nav-login" href="login.html">Masuk</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="produk">
+      <div class="hero-copy">
+        <p class="eyebrow">BERSIH LEBIH MUDAH</p>
+        <h1>Satu lap, banyak hal jadi bersih.</h1>
+        <p class="intro">Kenalan dengan lap microfiber MIBER: lembut, cepat menyerap, dan nyaman dipakai setiap hari.</p>
+        <a class="button" href="login.html">Pesan sekarang <span aria-hidden="true">→</span></a>
+        <p class="note">Bisa dipakai untuk rumah, kendaraan, hingga layar.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/lap.png" alt="Lap microfiber untuk membersihkan permukaan">
+        <figcaption>Teman bersih-bersih sehari-hari.</figcaption>
+      </figure>
+    </section>
+
+    <section class="benefits" id="manfaat" aria-labelledby="benefits-title">
+      <div class="section-heading">
+        <p class="eyebrow">KENAPA MIBER?</p>
+        <h2 id="benefits-title">Sederhana, praktis, berguna.</h2>
+      </div>
+      <div class="benefit-list">
+        <article class="benefit">
+          <span class="benefit-number">01</span>
+          <h3>Menyerap dengan baik</h3>
+          <p>Membantu mengangkat air dan debu dalam sekali usap.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-number">02</span>
+          <h3>Lembut di permukaan</h3>
+          <p>Cocok untuk kaca, meja, perlengkapan dapur, dan lainnya.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-number">03</span>
+          <h3>Pakai ulang</h3>
+          <p>Cuci setelah digunakan, lalu lap siap dipakai kembali.</p>
+        </article>
+      </div>
+      <figure class="benefit-photo">
+        <img src="img/lap2.png" alt="Dua pemain sepak bola mengangkat lap microfiber MIBER kuning dan biru di stadion" loading="lazy">
+        <figcaption>Dipercaya untuk pemakaian aktif — dari rumah hingga lapangan.</figcaption>
+      </figure>
+    </section>
+    <section class="order" id="pesan" aria-labelledby="order-title">
+      <div class="section-heading">
+        <p class="eyebrow">PESAN SEKARANG</p>
+        <h2 id="order-title">Pilih lap favoritmu.</h2>
+        <p class="section-sub">Atur jumlah, lalu tambah ke keranjang. Tersimpan otomatis di browser.</p>
+      </div>
+      <div class="product-list">
+        <article class="product" data-id="reguler" data-name="MIBER Reguler" data-price="25000">
+          <h3>MIBER Reguler</h3>
+          <p class="product-desc">Ukuran standar untuk dapur &amp; meja.</p>
+          <p class="product-price">Rp25.000</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-action="minus" aria-label="Kurangi jumlah MIBER Reguler">−</button>
+            <span class="qty-value" aria-live="polite">0</span>
+            <button type="button" class="qty-btn" data-action="plus" aria-label="Tambah jumlah MIBER Reguler">+</button>
+          </div>
+          <button type="button" class="button add-btn">Tambah ke keranjang</button>
+        </article>
+        <article class="product" data-id="jumbo" data-name="MIBER Jumbo" data-price="35000">
+          <h3>MIBER Jumbo</h3>
+          <p class="product-desc">Lebih lebar untuk kendaraan &amp; kaca.</p>
+          <p class="product-price">Rp35.000</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-action="minus" aria-label="Kurangi jumlah MIBER Jumbo">−</button>
+            <span class="qty-value" aria-live="polite">0</span>
+            <button type="button" class="qty-btn" data-action="plus" aria-label="Tambah jumlah MIBER Jumbo">+</button>
+          </div>
+          <button type="button" class="button add-btn">Tambah ke keranjang</button>
+        </article>
+        <article class="product" data-id="paket3" data-name="MIBER Paket 3pcs" data-price="60000">
+          <h3>MIBER Paket 3pcs</h3>
+          <p class="product-desc">Isi tiga, hemat untuk satu rumah.</p>
+          <p class="product-price">Rp60.000</p>
+          <div class="qty">
+            <button type="button" class="qty-btn" data-action="minus" aria-label="Kurangi jumlah paket 3pcs">−</button>
+            <span class="qty-value" aria-live="polite">0</span>
+            <button type="button" class="qty-btn" data-action="plus" aria-label="Tambah jumlah paket 3pcs">+</button>
+          </div>
+          <button type="button" class="button add-btn">Tambah ke keranjang</button>
+        </article>
+      </div>
+      <div class="cart-summary" id="cart-summary" aria-live="polite">
+        <p class="cart-text" id="cart-text">Keranjang masih kosong.</p>
+        <div class="cart-actions">
+          <button type="button" class="button" id="checkout-btn" disabled>Checkout</button>
+          <button type="button" class="link-btn icon-btn" id="clear-btn" disabled aria-label="Kosongkan keranjang" title="Kosongkan keranjang">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+            <span class="sr-only">Kosongkan</span>
+          </button>
+        </div>
+      </div>
+
+      <dialog id="checkout-dialog" class="checkout-dialog" aria-labelledby="checkout-title">
+        <form id="checkout-form" novalidate>
+          <h2 id="checkout-title">Checkout pesanan</h2>
+          <p class="checkout-summary" id="checkout-summary" aria-live="polite"></p>
+          <label for="co-name">Nama penerima</label>
+          <input id="co-name" name="name" type="text" placeholder="Nama lengkap" autocomplete="name" required>
+          <label for="co-phone">No. HP</label>
+          <input id="co-phone" name="phone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" required>
+          <label for="co-province">Provinsi</label>
+          <select id="co-province" required>
+            <option value="" selected>Memuat provinsi…</option>
+          </select>
+          <label for="co-regency">Kota / Kabupaten</label>
+          <select id="co-regency" disabled required>
+            <option value="" selected>Pilih provinsi dulu</option>
+          </select>
+          <label for="co-district">Kecamatan</label>
+          <select id="co-district" disabled required>
+            <option value="" selected>Pilih kota dulu</option>
+          </select>
+          <label for="co-village">Kelurahan / Desa</label>
+          <select id="co-village" disabled required>
+            <option value="" selected>Pilih kecamatan dulu</option>
+          </select>
+          <label for="co-address">Alamat jalan</label>
+          <input id="co-address" name="address" type="text" placeholder="Jl. / No. rumah / patokan" autocomplete="street-address" required>
+          <p class="error" id="co-error" aria-live="polite"></p>
+          <p class="success" id="co-success" aria-live="polite" hidden></p>
+          <div class="checkout-actions">
+            <button type="button" class="link-btn" id="checkout-cancel">Batal</button>
+            <button type="submit" class="button">Buat pesanan</button>
+          </div>
+        </form>
+      </dialog>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo" href="index.html">MIBER<span>.</span></a>
+  </footer>
+  <button id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="script.js" defer></script>
+</body>
+</html>
