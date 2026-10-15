@@ -283,7 +283,7 @@
     var coError = document.getElementById('co-error');
     var coSuccess = document.getElementById('co-success');
     var coCancel = document.getElementById('checkout-cancel');
-    var WIL_BASE = 'https://emsifa.github.io/api-wilayah-indonesia/api';
+    var WIL_BASE = 'https://ibnux.github.io/data-indonesia';
     var provincesLoaded = false;
 
     var fillSelect = function (sel, items, placeholder) {
@@ -294,10 +294,11 @@
       opt.selected = true;
       sel.appendChild(opt);
       items.forEach(function (it) {
+        var label = it.nama || it.name;
         var o = document.createElement('option');
         o.value = it.id;
-        o.textContent = it.name;
-        o.dataset.name = it.name;
+        o.textContent = label;
+        o.dataset.name = label;
         sel.appendChild(o);
       });
     };
@@ -318,18 +319,21 @@
       }).then(function (data) {
         if (!data || data.length === 0) {
           setLoading(sel, emptyMsg || 'Data kosong');
-          return;
+          return false;
         }
         fillSelect(sel, data, placeholder);
         sel.disabled = false;
+        return true;
       }).catch(function () {
-        setLoading(sel, 'Gagal memuat, coba lagi');
+        fillSelect(sel, [], 'Gagal memuat — pilih ulang untuk coba lagi');
+        sel.disabled = false;
+        return false;
       });
     };
     var loadProvinces = function () {
       if (provincesLoaded || !coProvince) return;
-      provincesLoaded = true;
-      fetchWilayah(WIL_BASE + '/provinces.json', coProvince, 'Pilih provinsi', 'Provinsi kosong');
+      fetchWilayah(WIL_BASE + '/provinsi.json', coProvince, 'Pilih provinsi', 'Provinsi kosong')
+        .then(function (ok) { provincesLoaded = ok === true; });
     };
     var selName = function (sel) {
       var o = sel && sel.selectedOptions && sel.selectedOptions[0];
@@ -338,22 +342,23 @@
 
     if (coProvince && coRegency && coDistrict && coVillage) {
       coProvince.addEventListener('change', function () {
+        if (!provincesLoaded && !coProvince.value) { loadProvinces(); return; }
         setLoading(coRegency, 'Pilih provinsi dulu');
         setLoading(coDistrict, 'Pilih kota dulu');
         setLoading(coVillage, 'Pilih kecamatan dulu');
         if (!coProvince.value) return;
-        fetchWilayah(WIL_BASE + '/regencies/' + coProvince.value + '.json', coRegency, 'Pilih kota / kabupaten', 'Kota kosong');
+        fetchWilayah(WIL_BASE + '/kabupaten/' + coProvince.value + '.json', coRegency, 'Pilih kota / kabupaten', 'Kota kosong');
       });
       coRegency.addEventListener('change', function () {
         setLoading(coDistrict, 'Pilih kota dulu');
         setLoading(coVillage, 'Pilih kecamatan dulu');
         if (!coRegency.value) return;
-        fetchWilayah(WIL_BASE + '/districts/' + coRegency.value + '.json', coDistrict, 'Pilih kecamatan', 'Kecamatan kosong');
+        fetchWilayah(WIL_BASE + '/kecamatan/' + coRegency.value + '.json', coDistrict, 'Pilih kecamatan', 'Kecamatan kosong');
       });
       coDistrict.addEventListener('change', function () {
         setLoading(coVillage, 'Pilih kecamatan dulu');
         if (!coDistrict.value) return;
-        fetchWilayah(WIL_BASE + '/villages/' + coDistrict.value + '.json', coVillage, 'Pilih kelurahan / desa', 'Kelurahan kosong');
+        fetchWilayah(WIL_BASE + '/kelurahan/' + coDistrict.value + '.json', coVillage, 'Pilih kelurahan / desa', 'Kelurahan kosong');
       });
     }
 

@@ -1,0 +1,10 @@
+[     538ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://tugas-web-drab.vercel.app/favicon.ico:0
+[    7984ms] [ERROR] Access to fetch at 'https://emsifa.github.io/api-wilayah-indonesia/api/provinces.json' from origin 'https://tugas-web-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://tugas-web-drab.vercel.app/:0
+[    7984ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://emsifa.github.io/api-wilayah-indonesia/api/provinces.json:0
+[   34969ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cdn.jsdelivr.net/gh/emsifa/api-wilayah-indonesia@main/api/provinces.json:0
+[   35342ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://raw.githubusercontent.com/emsifa/api-wilayah-indonesia/main/api/provinces.json:0
+[   35478ms] [ERROR] Access to fetch at 'https://wilayah.id/api/provinces.json' from origin 'https://tugas-web-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://tugas-web-drab.vercel.app/:0
+[   35478ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://wilayah.id/api/provinces.json:0
+[   44875ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cdn.jsdelivr.net/gh/emsifa/api-wilayah-indonesia@master/api/provinces.json:0
+[   45201ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://raw.githubusercontent.com/emsifa/api-wilayah-indonesia/master/api/provinces.json:0
+[   51247ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ibnux.github.io/data-indonesia/kelurahan/3573010.json:0
