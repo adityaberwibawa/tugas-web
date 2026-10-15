@@ -223,8 +223,6 @@
       var id = card.dataset.id;
       var qty = cart[id] || 0;
       var price = parseInt(card.dataset.price, 10) || 0;
-      var label = card.querySelector('.qty-value');
-      if (label) label.textContent = String(qty);
       if (qty > 0) {
         totalQty += qty;
         totalRp += qty * price;
@@ -251,20 +249,25 @@
       var minus = card.querySelector('[data-action="minus"]');
       var plus = card.querySelector('[data-action="plus"]');
       var add = card.querySelector('.add-btn');
+      var label = card.querySelector('.qty-value');
+      var pending = 0;
+      var paint = function () { if (label) label.textContent = String(pending); };
       var step = function (delta) {
-        var current = cart[id] || 0;
-        var next = Math.min(99, Math.max(0, current + delta));
-        if (next === 0) delete cart[id]; else cart[id] = next;
-        save();
+        pending = Math.min(99, Math.max(0, pending + delta));
+        paint();
       };
       if (minus) minus.addEventListener('click', function () { step(-1); });
       if (plus) plus.addEventListener('click', function () { step(1); });
       if (add) add.addEventListener('click', function () {
-        cart[id] = Math.min(99, (cart[id] || 0) + 1);
+        var n = pending === 0 ? 1 : pending;
+        cart[id] = Math.min(99, (cart[id] || 0) + n);
+        pending = 0;
+        paint();
         save();
         add.textContent = 'Ditambahkan ✓';
         setTimeout(function () { add.textContent = 'Tambah ke keranjang'; }, 1200);
       });
+      paint();
     });
     if (clearBtn) clearBtn.addEventListener('click', function () {
       if (confirm('Yakin ingin mengosongkan keranjang?')) { cart = {}; save(); }
